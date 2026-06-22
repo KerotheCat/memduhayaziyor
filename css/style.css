@@ -198,6 +198,10 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
   padding: clamp(1.6rem, 4vw, 2.6rem); margin-bottom: 2rem;
 }
+.workshop-img {
+  width: 100%; height: clamp(180px, 34vw, 300px); object-fit: cover;
+  border-radius: 6px; margin-bottom: 1.6rem; display: block; background: var(--cream-2);
+}
 .tagline {
   font-family: var(--display); font-style: italic; color: var(--sunset);
   font-size: 1.15rem; letter-spacing: .02em;

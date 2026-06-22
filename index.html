@@ -7,147 +7,125 @@
   <meta name="description" content="Memduha Uluevli — yazar. Çocuk kitapları, yazı atölyeleri ve İstanbul ile Bozcaada'dan ilham gezileri." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/fmr.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/duna.css" />
 </head>
 <body>
 
-  <!-- TOP BAR -->
+  <!-- NAV -->
   <header class="container">
-    <nav class="fmr-nav">
-      <a class="monogram" href="index.html" aria-label="Memduha Uluevli">M</a>
+    <nav class="duna-nav">
+      <a class="brand" href="index.html"><span class="star">✱</span> MEMDUHA ULUEVLİ</a>
       <button class="nav-toggle" aria-label="Menü">☰</button>
-      <div class="fmr-nav-right">
-        <ul class="fmr-nav-links">
-          <li><a href="hakkimda.html">Hakkımda</a></li>
-          <li><a href="kitaplarim.html">Kitaplar</a></li>
-          <li><a href="atolyeler.html">Atölyeler</a></li>
-          <li><a href="yazilar.html">Yazılar</a></li>
-          <li><a href="gezi.html">Gezi</a></li>
-          <li><a href="iletisim.html">İletişim</a></li>
-        </ul>
-        <div class="wordmark">
-          <div class="name">MEMDUHA ULUEVLİ</div>
-          <div class="sub">Yazar</div>
-        </div>
-      </div>
+      <ul class="nav-links">
+        <li><a href="hakkimda.html">Hakkımda</a></li>
+        <li><a href="kitaplarim.html">Kitaplar</a></li>
+        <li><a href="atolyeler.html">Atölyeler</a></li>
+        <li><a href="yazilar.html">Yazılar</a></li>
+        <li><a href="gezi.html">Gezi</a></li>
+        <li class="only-mobile"><a href="iletisim.html">İletişim</a></li>
+      </ul>
+      <a class="btn btn-fill nav-cta" href="iletisim.html">İletişim</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="container">
-    <div class="fmr-hero">
-      <div class="fmr-hero__text">
-        <p class="kicker">Yazar · Çocuk Kitapları</p>
-        <h1>Kelimelerle yavaşlayan bir yolculuk</h1>
-        <p class="lead">İstanbul'un eski mahallelerinden Bozcaada'nın rüzgârına… Yazıyı, kendimle ve okurla buluştuğum yer olarak görüyorum.</p>
-        <a class="bracket" href="atolyeler.html">{ ATÖLYELER }</a>
-      </div>
-      <div class="fmr-hero__plate">
-        <img src="img/gallery/istanbul/ist45.jpg" alt="İstanbul'da bir kilise içi — ilham plakası" />
+  <section class="duna-hero">
+    <img class="duna-hero__art" src="img/hero/hero.jpg" alt="Bozcaada'da gün batımı" />
+    <div class="duna-hero__stack">
+      <span class="pill">Yeni · Kaya ile Karga</span>
+      <h1>Kelimelerle yavaşlayan bir yolculuk</h1>
+      <p class="sub">İstanbul'un eski mahallelerinden Bozcaada'nın rüzgârına… Yazıyı, kendimle ve okurla buluştuğum yer olarak görüyorum.</p>
+      <a class="btn btn-fill btn-lg" href="atolyeler.html">Atölyeleri keşfet</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="container sec" style="padding-top:40px;">
+    <div class="stats">
+      <div><div class="num">2</div><div class="lbl">Yazı atölyesi</div></div>
+      <div><div class="num">1</div><div class="lbl">Çocuk kitabı</div></div>
+      <div><div class="num">10</div><div class="lbl">Okuma önerisi</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURE CARDS -->
+  <section class="container sec" style="padding-top:0;">
+    <div class="sec-head">
+      <p class="eyebrow">Neler var?</p>
+      <h2>Buradan başla</h2>
+    </div>
+    <div class="cards">
+      <a class="card" href="kitaplarim.html">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#292421" stroke-width="1.5"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5Z"/><path d="M18 3v18"/></svg>
+        <h3>Kitaplar</h3>
+        <p>Çocuk kitabım ve beni besleyen, ilham aldığım okuma önerileri.</p>
+        <span class="more">Keşfet →</span>
+      </a>
+      <a class="card" href="atolyeler.html">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#292421" stroke-width="1.5"><path d="M3 21l3-1 11-11-2-2L4 18l-1 3Z"/><path d="M14 6l2 2"/></svg>
+        <h3>Atölyeler</h3>
+        <p>Yetişkinler için Yaratıcı Yazı Atölyesi, çocuklar için Kelime Bahçesi.</p>
+        <span class="more">Keşfet →</span>
+      </a>
+      <a class="card" href="yazilar.html">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#292421" stroke-width="1.5"><path d="M4 19c6-2 9-6 14-15M4 19c0-4 2-7 6-8"/></svg>
+        <h3>Yazılar</h3>
+        <p>Yayımlanan ilk öyküm, blog ve Substack yazılarım.</p>
+        <span class="more">Keşfet →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BOOK FEATURE -->
+  <section class="container sec" style="padding-top:0;">
+    <div class="bookfeat">
+      <div class="bf-img"><img src="img/books/kaya-ile-karga-kapak.jpg" alt="Kaya ile Karga kitabının kapağı" /></div>
+      <div>
+        <p class="eyebrow">Kendi kitabım · Resimli uyku masalı</p>
+        <h2>Kaya ile Karga</h2>
+        <p>Yuvasından düşen bir karga ile küçük Kaya'nın dostluğu… Farklılıklara saygıyı ve şefkatle dinlemeyi anlatan resimli bir masal — doğrudan tarayıcıdan, sayfaları çevirerek okunabilir.</p>
+        <a class="btn btn-fill" href="kitaplar/kaya-ile-karga/" target="_blank" rel="noopener">Kitabı oku</a>
       </div>
     </div>
   </section>
 
   <!-- BEN MEMDUHA -->
-  <section class="container sec">
-    <div class="sectitle">
-      <span class="t">Ben Memduha</span>
-      <hr class="rule" />
-    </div>
+  <section class="container sec" style="padding-top:0;">
     <div class="editorial">
-      <div class="plate">
+      <div>
         <img src="img/about/memduha.jpg" alt="Memduha Uluevli İstanbul'un eski bir sokağında" />
         <p class="cap">İstanbul'un eski sokaklarında, bir kedi dostuyla.</p>
       </div>
       <div>
+        <p class="eyebrow" style="font-size:14px;color:var(--stone);margin:0 0 14px;">Ben Memduha</p>
         <h2>Zaman zaman öğretmen, her zaman öğrenci</h2>
         <p>Çocuk kitapları yazıyor, çocuklarla ve yetişkinlerle yazı atölyeleri düzenliyorum. İstanbul ve Bozcaada benim ilham kaynağım; bir dönemin İstanbul'unu ve o dönemin kadınlarını anlattığım bir roman üzerinde çalışıyorum.</p>
-        <a class="bracket" href="hakkimda.html">{ HAKKIMDA }</a>
+        <a class="btn btn-ghost" href="hakkimda.html">Hakkımda</a>
       </div>
     </div>
   </section>
 
-  <!-- SEÇKİ -->
-  <section class="container sec">
-    <div class="sectitle">
-      <span class="t">Seçki — Okuma Önerileri</span>
-      <hr class="rule" />
-    </div>
-    <div class="grid3">
-      <div class="col">
-        <span class="cover"><img src="img/books/maalouf-semerkant.jpg" alt="Semerkant" /></span>
-        <div class="title">Semerkant</div>
-        <div class="meta">Amin Maalouf</div>
-      </div>
-      <div class="col">
-        <span class="cover"><img src="img/books/hosseini-bin-muhtesem-gunes.jpg" alt="Bin Muhteşem Güneş" /></span>
-        <div class="title">Bin Muhteşem Güneş</div>
-        <div class="meta">Khaled Hosseini</div>
-      </div>
-      <div class="col">
-        <span class="cover"><img src="img/books/pinar-kur-asilacak-kadin.jpg" alt="Asılacak Kadın" /></span>
-        <div class="title">Asılacak Kadın</div>
-        <div class="meta">Pınar Kür</div>
-      </div>
-    </div>
-    <div class="pagination" style="border-top:0;">
-      <a class="ghost" href="kitaplarim.html">{ TÜM KİTAPLIK }</a>
-    </div>
-  </section>
-
-  <!-- DARK BAND: KAYA İLE KARGA -->
-  <section class="band">
-    <div class="band-img">
-      <img src="img/books/kaya-ile-karga-kapak.jpg" alt="Kaya ile Karga kitabının kapağı" />
-    </div>
-    <div class="band-body">
-      <p class="mark">Kaya ile Karga</p>
-      <p class="label">ÇOCUK KİTABI</p>
-      <p>Yuvasından düşen bir karga ile küçük Kaya'nın dostluğu… Farklılıklara saygıyı ve şefkatle dinlemeyi anlatan resimli bir uyku masalı — doğrudan tarayıcıdan okunabilir.</p>
-      <a class="bracket" href="kitaplar/kaya-ile-karga/" target="_blank" rel="noopener">{ KİTABI OKU }</a>
-    </div>
-  </section>
-
-  <!-- ATÖLYELER -->
-  <section class="container sec">
-    <div class="sectitle">
-      <span class="t">Atölyeler</span>
-      <hr class="rule" />
-    </div>
+  <!-- GEZİ -->
+  <section class="container sec" style="padding-top:0;">
     <div class="editorial">
-      <div class="plate">
-        <img src="img/atolye/kelime-bahcesi.jpg" alt="Defter ve kalemle yazı atölyesi" />
+      <div>
+        <p class="eyebrow" style="font-size:14px;color:var(--stone);margin:0 0 14px;">Gezi &amp; İlham</p>
+        <h2>İki şehir, bir ilham</h2>
+        <p>Üzerinde çalıştığım roman için İstanbul'un eski semtlerini adımlıyor; Bozcaada'da denizin ve rüzgârın sessizliğinde yazıyorum. O yolculuklardan kareler.</p>
+        <a class="btn btn-ghost" href="gezi.html">Galeriye git</a>
       </div>
       <div>
-        <h2>Yazıyı birlikte keşfedelim</h2>
-        <p>Yetişkinler için keşif odaklı <span class="italic">Yaratıcı Yazı Atölyesi</span>, çocuklar için hayal gücünü kelimelere çeviren <span class="italic">Kelime Bahçesi</span>. Yavaş, derin, samimi.</p>
-        <a class="bracket" href="atolyeler.html">{ ATÖLYELERE GÖZ AT }</a>
+        <img src="img/gallery/istanbul/ist45.jpg" alt="İstanbul'da bir kilise içi" />
       </div>
-    </div>
-  </section>
-
-  <!-- GEZİ & İLHAM -->
-  <section class="container sec">
-    <div class="sectitle">
-      <span class="t">Gezi &amp; İlham</span>
-      <hr class="rule" />
-    </div>
-    <div class="plate-block">
-      <div class="pimg"><img src="img/gallery/bozcaada/boz05.jpg" alt="Bozcaada'da gün batımı" /></div>
-      <p>Üzerinde çalıştığım roman için İstanbul'un eski semtlerini adımlıyor; Bozcaada'da denizin ve rüzgârın sessizliğinde yazıyorum.</p>
-      <a class="ghost" href="gezi.html">{ GALERİYE GİT }</a>
-    </div>
-    <div class="pagination">
-      <span class="arrow">←</span><span>1 / 5</span><span class="arrow">→</span>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="fmr-footer">
+  <footer class="duna-footer">
     <div class="container">
       <div class="inner">
-        <a class="monogram" href="index.html">M</a>
+        <a class="brand" href="index.html"><span class="star">✱</span> MEMDUHA ULUEVLİ</a>
         <ul class="f-links">
           <li><a href="hakkimda.html">Hakkımda</a></li>
           <li><a href="kitaplarim.html">Kitaplar</a></li>
@@ -160,13 +138,13 @@
           <li><a href="mailto:memduhauluevli@gmail.com">E-posta</a></li>
         </ul>
       </div>
-      <div class="f-fine">© <span id="yil">2026</span> Memduha Uluevli · Yazar</div>
+      <div class="fine">© <span id="yil">2026</span> Memduha Uluevli · Yazar</div>
     </div>
   </footer>
 
   <script>
     document.querySelector('.nav-toggle').addEventListener('click', function () {
-      document.querySelector('.fmr-nav-links').classList.toggle('open');
+      document.querySelector('.nav-links').classList.toggle('open');
     });
     document.getElementById('yil').textContent = new Date().getFullYear();
   </script>

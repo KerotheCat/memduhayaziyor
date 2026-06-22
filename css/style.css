@@ -332,6 +332,35 @@ code {
 .strip img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease, filter .3s ease; }
 .strip a:hover img { transform: scale(1.07); filter: brightness(1.06); }
 
+/* ---------- Blog ızgarası ---------- */
+.blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+.blog-card {
+  display: flex; flex-direction: column; background: var(--white);
+  border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.blog-card .thumb {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  background: var(--cream-2);
+}
+.blog-card:hover .thumb { filter: brightness(1.04); }
+.blog-noimg {
+  aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1.2rem; color: #fff; font-family: var(--display);
+  font-size: 1.3rem; line-height: 1.2;
+  background: linear-gradient(135deg, var(--sea) 0%, var(--sunset) 100%);
+}
+.blog-card .bc-body { padding: 1rem 1.15rem 1.25rem; display: block; }
+.blog-card .bc-date {
+  display: block; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--sunset); margin-bottom: .3rem;
+}
+.blog-card .bc-title {
+  display: block; font-family: var(--display); font-size: 1.12rem; color: var(--sea);
+  line-height: 1.25;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .about-grid { grid-template-columns: 1fr; gap: 1.6rem; }
@@ -344,6 +373,7 @@ code {
   .grid--3, .grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature { grid-template-columns: 1fr; }
   .gallery { columns: 2; }
 }
@@ -359,4 +389,5 @@ code {
   .nav-links a { display: block; padding: .8rem 0; border-bottom: 1px solid var(--line); }
   .nav-toggle { display: block; }
   .grid--3, .grid--2, .books, .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .blog-grid { grid-template-columns: 1fr; }
 }

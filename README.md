@@ -2,6 +2,20 @@
 
 Statik (derleme gerektirmeyen) bir site. Tüm dosyalar düz HTML/CSS/JS; bu `site/` klasörü olduğu gibi yayınlanır.
 
+## Yayında
+
+- **Canlı adres:** https://kerothecat.github.io/memduhayaziyor/
+- **Depo:** https://github.com/KerotheCat/memduhayaziyor (GitHub Pages, `main` dalı, kök)
+
+### Güncelleme (yayındaki site nasıl değişir?)
+Bu `site/` klasörü deponun kökü. Bir dosyayı değiştirip şu komutları çalıştırınca site birkaç dakikada otomatik güncellenir:
+```
+cd site
+git add -A
+git commit -m "güncelleme"
+git push
+```
+
 ## Cloudflare Pages'e yayınlama
 
 İki yol var:

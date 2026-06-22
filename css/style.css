@@ -327,14 +327,14 @@ code {
 
 /* Ana sayfa "Ben Memduha" — gün batımı fonu (hero paletine uygun, koyulaştırılmış) */
 .about-section--sunset {
-  background: linear-gradient(162deg, #2a4d58 0%, #5d4657 35%, #9f5639 70%, #d4842f 100%);
-  color: #f4ead9;
+  background: linear-gradient(165deg, #f0a45f 0%, #eec196 34%, #b6d6e6 70%, #c8e4f4 100%);
+  color: var(--ink);
 }
-.about-section--sunset .eyebrow { color: #f4cd8c; }
-.about-section--sunset h2 { color: #ffffff; }
-.about-section--sunset .lead { color: #f3e7d4; }
-.about-section--sunset .about-cap { color: #ecdcc3; }
-.about-section--sunset .bg-merhaba { color: #ffe6c2; opacity: .10; }
+.about-section--sunset .eyebrow { color: #b3551b; }
+.about-section--sunset h2 { color: var(--sea); }
+.about-section--sunset .lead { color: var(--ink); }
+.about-section--sunset .about-cap { color: var(--ink-soft); }
+.about-section--sunset .bg-merhaba { color: var(--sea); opacity: .08; }
 
 /* ---------- Home: iki şehir ---------- */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }

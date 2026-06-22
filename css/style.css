@@ -327,7 +327,7 @@ code {
 
 /* Ana sayfa "Ben Memduha" — gün batımı fonu (hero paletine uygun, koyulaştırılmış) */
 .about-section--sunset {
-  background: linear-gradient(162deg, #14282f 0%, #38303f 36%, #743b29 72%, #a85f1a 100%);
+  background: linear-gradient(162deg, #2a4d58 0%, #5d4657 35%, #9f5639 70%, #d4842f 100%);
   color: #f4ead9;
 }
 .about-section--sunset .eyebrow { color: #f4cd8c; }

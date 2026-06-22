@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaya ile Karga — Uyku Masalı</title>
+<style>
+  :root{
+    --paper:#fdf6e6;
+    --ink:#4a3f33;
+    --accent:#7fae5a;
+    --accent-dark:#5f8742;
+    --coral:#d98162;
+    --gold:#f0c060;
+    --fs:1.55rem;            /* okunabilir taban yazı boyutu */
+    --sky1:#10173a;
+    --sky2:#2a2356;
+    --sky3:#3a2c63;
+  }
+  /* GÜNDÜZ modu */
+  body.day{
+    --sky1:#acd5f0;
+    --sky2:#cfe6f5;
+    --sky3:#e9f3e3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:ui-rounded,"SF Pro Rounded","Varela Round","Trebuchet MS","Comic Sans MS",sans-serif;
+    color:var(--ink);
+    background:linear-gradient(160deg,var(--sky1),var(--sky2) 55%,var(--sky3));
+    background-attachment:fixed;
+    display:flex;flex-direction:column;align-items:center;
+    padding:18px 14px 40px;
+    transition:background 1.2s ease;
+    overflow-x:hidden;
+  }
+  /* yıldız alanı */
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0;transition:opacity 1s}
+  body.day .stars{opacity:0}
+  .star{position:absolute;background:#fff;border-radius:50%;
+        box-shadow:0 0 6px 1px rgba(255,255,255,.7);
+        animation:tw 5s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+  .moon{position:fixed;top:26px;right:34px;width:64px;height:64px;border-radius:50%;
+        background:radial-gradient(circle at 35% 35%,#fff6da,var(--gold));
+        box-shadow:0 0 40px 8px rgba(240,192,96,.5);z-index:0;transition:opacity 1s,transform 1.2s}
+  body.day .moon{background:radial-gradient(circle at 35% 35%,#fff3c4,#ffd34d);
+                 box-shadow:0 0 50px 14px rgba(255,211,77,.6)}
+
+  /* KİTAP */
+  .book{
+    position:relative;z-index:1;
+    width:min(760px,100%);
+    background:var(--paper);
+    border-radius:34px;
+    box-shadow:0 24px 60px rgba(8,10,40,.45),0 2px 0 #fff inset;
+    overflow:hidden;margin-top:6px;
+  }
+  .page{display:none}
+  .page.active{display:block;animation:fade 1s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  .frame{padding:14px 14px 0}
+  .page img{width:100%;display:block;border-radius:22px;background:#f3ecdb}
+
+  .copy{padding:26px 34px 36px}
+  .copy p{
+    font-size:var(--fs);line-height:2;letter-spacing:.012em;
+    text-align:center;margin:0 auto;max-width:24em;
+  }
+  .copy p + p{margin-top:1em}
+  .verse{white-space:pre-line}
+  .copy em{color:var(--coral);font-style:normal;font-weight:bold}
+
+  /* KAPAK */
+  .cover .copy{padding-top:30px}
+  .cover h1{
+    font-size:3.1rem;text-align:center;line-height:1.12;
+    color:var(--coral);text-shadow:2px 2px 0 #fff,3px 3px 0 rgba(217,129,98,.25);
+  }
+  .cover .sub{text-align:center;color:var(--accent-dark);font-size:1.5rem;margin-top:.3em}
+  .cover .badge{display:block;text-align:center;margin-top:1.1em;font-size:1.15rem;color:#9a8a6e}
+
+  /* SON */
+  .end h2{text-align:center;font-size:2rem;color:var(--coral);margin-bottom:.4em}
+  .theend{margin-top:1em;color:var(--accent-dark);font-size:1.8rem;text-align:center}
+
+  /* İLERLEME (yıldızlar) */
+  .progress{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+            padding:4px 16px 0}
+  .dot{font-size:1.05rem;opacity:.32;transition:opacity .3s,transform .3s}
+  .dot.on{opacity:1;transform:scale(1.25)}
+
+  /* NAV */
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+       padding:16px 18px 20px;border-top:2px dotted #e4d9bd;margin-top:6px}
+  .nav button{
+    font-family:inherit;font-size:1.35rem;font-weight:bold;cursor:pointer;
+    border:none;color:#fff;background:var(--accent);
+    padding:16px 26px;border-radius:40px;box-shadow:0 5px 0 var(--accent-dark);
+    transition:transform .1s,box-shadow .1s;min-width:130px;
+  }
+  .nav button:active{transform:translateY(4px);box-shadow:0 1px 0 var(--accent-dark)}
+  .nav button:disabled{opacity:.3;box-shadow:none;cursor:default}
+
+  /* ARAÇ ÇUBUĞU */
+  .tools{position:relative;z-index:1;display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:center}
+  .tools button{
+    font-family:inherit;font-size:1.1rem;cursor:pointer;border:none;
+    background:rgba(255,255,255,.85);color:#4a3f33;
+    padding:10px 16px;border-radius:30px;box-shadow:0 3px 8px rgba(0,0,0,.18);
+  }
+  .tools button:active{transform:translateY(2px)}
+
+  @media (max-width:560px){
+    :root{--fs:1.32rem}
+    .copy{padding:20px 20px 28px}
+    .cover h1{font-size:2.3rem}
+    .moon{width:48px;height:48px;top:16px;right:18px}
+    .nav button{min-width:104px;padding:14px 16px;font-size:1.15rem}
+  }
+
+  @media print{
+    body{background:#fff;padding:0}
+    .stars,.moon,.tools,.nav{display:none!important}
+    .book{box-shadow:none;width:100%;border-radius:0}
+    .page{display:block!important;page-break-after:always}
+  }
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
+
+<div class="tools">
+  <button id="mode">☀️ Gündüz</button>
+  <button id="smaller">A−</button>
+  <button id="bigger">A+</button>
+</div>
+
+<div class="book" id="book">
+
+  <!-- KAPAK -->
+  <section class="page cover active">
+    <div class="frame"><img src="gorseller/01_kapak_bank.jpg" alt="Kaya ve Karga bankta"></div>
+    <div class="copy">
+      <h1>Kaya ile Karga</h1>
+      <p class="sub">Bir dostluk masalı</p>
+      <span class="badge">🌙 İyi geceler okuması</span>
+    </div>
+  </section>
+
+  <!-- 1 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/02_bahce_besleme.jpg" alt="Kaya bahçede kargayı besliyor"></div>
+    <div class="copy">
+      <p class="verse">Merhaba!
+Benim adım Kaya.
+Bu da en iyi arkadaşım Karga.</p>
+      <p class="verse">Yuvasından düşüp
+bahçemizde bulunca,
+hemen alıp eve getirdik.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/01_kapak_bank.jpg" alt="Kaya ve Karga birlikte"></div>
+    <div class="copy">
+      <p class="verse">Önce kanadını,
+gagasını iyileştirdik.
+Sonra da onu besledik.</p>
+      <p class="verse">Annem güzel bir yuva yaptı.
+Artık Karga da bizimleydi.
+
+Karga benim en iyi dostum. 💚</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/03_uzgun_cocuklar.jpg" alt="Üzgün çocuklar ve hayvanları"></div>
+    <div class="copy">
+      <p class="verse">Bizim sokakta
+herkesin bir dostu var.</p>
+      <p class="verse">Ama bir dertleri varmış…
+Karga bu haberi verdi.
+
+Hep birlikte toplandılar,
+bir çözüm bulmaya.</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/04_hamster_konusma.jpg" alt="Hamster taşın üstünde konuşuyor"></div>
+    <div class="copy">
+      <p class="verse">Önce Hamster söze başladı:
+“Bize isimler taktılar.
+Kediye <em>nankör</em> dediler.</p>
+      <p class="verse">Kimimiz çok yaramaz,
+kimimiz laf dinlemez…
+Oysa hepimiz aynıyız!”</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/05_hayvan_ozellikleri.jpg" alt="Hayvanların özellikleri"></div>
+    <div class="copy">
+      <p class="verse">Kedi sever kendi halini.
+Tavşan hiç durmaz yerinde.
+Balık yüzer bir ileri bir geri.
+Kaplumbağa çok sever yemeyi.</p>
+      <p class="verse">Her birimiz farklıyız,
+ama hepimiz çok kıymetliyiz. ✨</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/06_sokak_aileler.jpg" alt="Sokakta toplanan aileler"></div>
+    <div class="copy">
+      <p>Karga’nın haberi tüm şehre yayıldı.</p>
+      <p>Kulaktan kulağa, evden eve…</p>
+      <p>Çocuklar, anneler, babalar toplandı.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/07_parkta_dinleme.jpg" alt="Parkta Karga'yı dinleyen aileler"></div>
+    <div class="copy">
+      <p>Hepsi sessizce dinledi.</p>
+      <p>Bir çocuk fısıldadı: <em>“Bunu hiç bilmiyordum.”</em></p>
+      <p>O gün herkes hayvanına biraz daha şefkatle baktı. 🐾</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="page">
+    <div class="frame"><img src="gorseller/08_gece_yildizlar.jpg" alt="Gece yıldızların altında Kaya ve Karga"></div>
+    <div class="copy">
+      <p>O gece Kaya ile Karga bahçedeydi.</p>
+      <p>Yıldızlar çıkmıştı, hava ılık ve sakindi. 🌟</p>
+      <p class="verse">Karga yaslandı omzuna:
+<em>“İnsanlar dinlemeyi öğrendi.”</em></p>
+    </div>
+  </section>
+
+  <!-- SON -->
+  <section class="page end">
+    <div class="frame"><img src="gorseller/01_kapak_bank.jpg" alt="Kaya ve Karga birlikte"></div>
+    <div class="copy">
+      <h2>Ve o geceden sonra…</h2>
+      <p>Sokaktaki hayvanlar artık daha az korktu.</p>
+      <p>Evdeki dostlar yalnız kalmadı.</p>
+      <p>Çünkü bazen tek bir tatlı söz,
+      her şeyi anlamaya yeter. 💫</p>
+      <p class="theend">İyi geceler… 🌙</p>
+    </div>
+  </section>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="nav">
+    <button id="prev">‹ Geri</button>
+    <button id="next">İleri ›</button>
+  </div>
+</div>
+
+<script>
+  /* yıldızları oluştur */
+  const sky=document.getElementById('stars');
+  for(let k=0;k<70;k++){
+    const s=document.createElement('div');
+    s.className='star';
+    const sz=Math.random()*2.4+1;
+    s.style.width=s.style.height=sz+'px';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*5)+'s';
+    sky.appendChild(s);
+  }
+
+  const pages=[...document.querySelectorAll('.page')];
+  let i=0;
+  const prev=document.getElementById('prev');
+  const next=document.getElementById('next');
+  const prog=document.getElementById('progress');
+  pages.forEach((_,n)=>{
+    const d=document.createElement('span');
+    d.className='dot';d.textContent='⭐';
+    prog.appendChild(d);
+  });
+  const dots=[...prog.children];
+
+  function show(n){
+    pages[i].classList.remove('active');
+    i=Math.max(0,Math.min(pages.length-1,n));
+    pages[i].classList.add('active');
+    dots.forEach((d,k)=>d.classList.toggle('on',k<=i));
+    prev.disabled=i===0;
+    next.disabled=i===pages.length-1;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  prev.onclick=()=>show(i-1);
+  next.onclick=()=>show(i+1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight')show(i+1);
+    if(e.key==='ArrowLeft')show(i-1);
+  });
+
+  /* Gündüz / Gece */
+  const modeBtn=document.getElementById('mode');
+  modeBtn.onclick=()=>{
+    document.body.classList.toggle('day');
+    modeBtn.textContent=document.body.classList.contains('day')?'🌙 Gece':'☀️ Gündüz';
+  };
+
+  /* Yazı boyutu */
+  let fs=1.55;
+  const root=document.documentElement;
+  document.getElementById('bigger').onclick=()=>{fs=Math.min(2.4,fs+0.12);root.style.setProperty('--fs',fs+'rem')};
+  document.getElementById('smaller').onclick=()=>{fs=Math.max(1.1,fs-0.12);root.style.setProperty('--fs',fs+'rem')};
+
+  show(0);
+</script>
+</body>
+</html>

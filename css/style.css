@@ -295,9 +295,26 @@ code {
 .footer-bottom { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.15); font-size: .85rem; color: #c9bda3; }
 
 /* ---------- About (portre) ---------- */
+.about-section { position: relative; overflow: hidden; }
+.bg-merhaba {
+  position: absolute; top: -.08em; left: 50%; transform: translateX(-50%);
+  font-family: 'Caveat', cursive; font-weight: 600;
+  font-size: clamp(7rem, 27vw, 23rem); line-height: 1;
+  color: var(--sea); opacity: .07; white-space: nowrap;
+  pointer-events: none; z-index: 0;
+}
+.about-section > .container { position: relative; z-index: 1; }
+
 .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 2.6rem; align-items: start; }
-.about-grid .portrait { width: 100%; border-radius: 4px; box-shadow: var(--shadow); background: var(--cream-2); }
-.about-cap { font-size: .82rem; color: var(--ink-soft); font-style: italic; margin-top: .6rem; }
+.about-photo { margin: 0; }
+.portrait-frame {
+  background: #fff; padding: 12px 12px 14px; border: 1px solid var(--line);
+  box-shadow: 0 14px 34px rgba(43,38,32,.16); border-radius: 2px;
+  transform: rotate(-1.6deg); transition: transform .3s ease;
+}
+.portrait-frame:hover { transform: rotate(0deg); }
+.portrait-frame img { display: block; width: 100%; border-radius: 1px; background: var(--cream-2); }
+.about-cap { font-size: .82rem; color: var(--ink-soft); font-style: italic; margin-top: .9rem; text-align: center; }
 
 /* ---------- Home: iki şehir ---------- */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
@@ -317,8 +334,9 @@ code {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
-  .about-grid { grid-template-columns: 1fr; gap: 1.4rem; }
-  .about-grid .portrait { max-width: 380px; }
+  .about-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .about-photo { max-width: 360px; margin-inline: auto; }
+  .bg-merhaba { font-size: clamp(5rem, 38vw, 11rem); }
   .duo { grid-template-columns: 1fr; }
   .strip { grid-template-columns: repeat(3, 1fr); }
 }

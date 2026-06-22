@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gezi &amp; İlham — Memduha Uluevli</title>
+  <meta name="description" content="İstanbul'un eski mahalleleri ve Bozcaada'dan ilham kareleri." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap&subset=latin-ext" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Memduha Uluevli<small>Yazar · Atölye</small></a>
+      <button class="nav-toggle" aria-label="Menü">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="hakkimda.html">Hakkımda</a></li>
+        <li><a href="kitaplarim.html">Kitaplar</a></li>
+        <li><a href="atolyeler.html">Atölyeler</a></li>
+        <li><a href="yazilar.html">Yazılar</a></li>
+        <li><a href="gezi.html" aria-current="page">Gezi &amp; İlham</a></li>
+        <li><a href="instagram.html">Instagram</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Gezi &amp; İlham</p>
+        <h1>İki şehir, bir ilham</h1>
+        <p class="lead">Üzerinde çalıştığım roman için İstanbul'un eski semtlerini adımlıyor; Bozcaada'da ise denizin ve rüzgârın sessizliğinde yazıyorum. İşte o yolculuklardan kareler.</p>
+      </div>
+
+      <h2 style="margin-top:1rem;">İstanbul — Eski Mahalleler</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Taşların arasından fısıldayan, bir dönemin kadınlarını anlatan hikâyelerin izinde.</p>
+      <div class="gallery" data-gallery data-base="img/gallery/istanbul" data-manifest="img/gallery/istanbul.json"></div>
+
+      <h2 style="margin-top:3.5rem;">Bozcaada</h2>
+      <p class="lead" style="margin-bottom:1.5rem;">Güneşin denize değdiği yer; yavaşlığın ve yazının adası.</p>
+      <div class="gallery" data-gallery data-base="img/gallery/bozcaada" data-manifest="img/gallery/bozcaada.json"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">Memduha Uluevli</a>
+        <ul class="footer-nav">
+          <li><a href="hakkimda.html">Hakkımda</a></li>
+          <li><a href="kitaplarim.html">Kitaplar</a></li>
+          <li><a href="atolyeler.html">Atölyeler</a></li>
+          <li><a href="yazilar.html">Yazılar</a></li>
+          <li><a href="gezi.html">Gezi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/memdush.yaziyo/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://memduhauluevli.blogspot.com" target="_blank" rel="noopener">Blog</a>
+          <a href="mailto:memduhauluevli@gmail.com">E-posta</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      © <span id="yil">2026</span> Memduha Uluevli · Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+  <script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+</body>
+</html>

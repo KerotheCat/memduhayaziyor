@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yazılar — Memduha Uluevli</title>
+  <meta name="description" content="Memduha Uluevli'nin yayımlanan öyküsü, blog ve Substack yazıları." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap&subset=latin-ext" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Memduha Uluevli<small>Yazar · Atölye</small></a>
+      <button class="nav-toggle" aria-label="Menü">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="hakkimda.html">Hakkımda</a></li>
+        <li><a href="kitaplarim.html">Kitaplar</a></li>
+        <li><a href="atolyeler.html">Atölyeler</a></li>
+        <li><a href="yazilar.html" aria-current="page">Yazılar</a></li>
+        <li><a href="gezi.html">Gezi &amp; İlham</a></li>
+        <li><a href="instagram.html">Instagram</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Yazılar</p>
+        <h1>Kelimelerin izinde</h1>
+        <p class="lead">İstanbul'un eski mahallelerinden, Bozcaada'nın rüzgârından ve gündelik anlardan damıtılan yazılar.</p>
+      </div>
+
+      <!-- GAYET ÖYKÜ -->
+      <div class="feature">
+        <div>
+          <p class="meta">Yayımlanan İlk Öyküm · Öykü · Kasım 2025</p>
+          <h2>Mevsimlerden Meçhul, Aylardan Muamma</h2>
+          <p>İlk yayımlanan öyküm Gayet Dergi'de okurla buluştu. Bir adamın belirsiz bir günde, hastane ışıklarına doğru attığı adımlarla açılan, zamanın ve hafızanın muğlaklığında gezinen bir hikâye.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://www.gayetdergi.com/article/memduha-uluevli-mevsimlerden-mechul-aylardan-muamma" target="_blank" rel="noopener">Gayet Dergi'de oku</a>
+          </div>
+        </div>
+        <div>
+          <blockquote style="margin:0;border-color:var(--sunset);">Yazıyı, kendimle ve okurla buluştuğum yer olarak görüyorum.</blockquote>
+        </div>
+      </div>
+
+      <!-- BLOG & SUBSTACK -->
+      <div class="grid grid--2" style="margin-top:2rem;">
+        <a class="card" href="https://memduhauluevli.blogspot.com" target="_blank" rel="noopener">
+          <p class="eyebrow">Blog</p>
+          <h3>Blog yazıları</h3>
+          <p>Gezilerden, okumalardan ve gündelik anlardan ilhamla yazdıklarım.</p>
+          <span class="arrow">Bloga git →</span>
+        </a>
+        <!-- SUBSTACK: Yayın adresini aldığında aşağıdaki href'i güncelle. -->
+        <a class="card" href="#" data-todo="substack-url" target="_blank" rel="noopener">
+          <p class="eyebrow">Substack</p>
+          <h3>Substack yazıları</h3>
+          <p>Daha uzun soluklu yazılarım ve düşünce defterim Substack'te.</p>
+          <span class="arrow">Substack'e git →</span>
+        </a>
+      </div>
+
+      <div class="note" style="margin-top:2rem;">
+        Öykü ve şiirlerimin bir kısmını burada ayrı sayfalar hâlinde de yayımlamayı planlıyorum.
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">Memduha Uluevli</a>
+        <ul class="footer-nav">
+          <li><a href="hakkimda.html">Hakkımda</a></li>
+          <li><a href="kitaplarim.html">Kitaplar</a></li>
+          <li><a href="atolyeler.html">Atölyeler</a></li>
+          <li><a href="yazilar.html">Yazılar</a></li>
+          <li><a href="gezi.html">Gezi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/memdush.yaziyo/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://memduhauluevli.blogspot.com" target="_blank" rel="noopener">Blog</a>
+          <a href="mailto:memduhauluevli@gmail.com">E-posta</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      © <span id="yil">2026</span> Memduha Uluevli · Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+</body>
+</html>

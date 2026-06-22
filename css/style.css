@@ -325,6 +325,17 @@ code {
 .portrait-frame img { display: block; width: 100%; border-radius: 1px; background: var(--cream-2); }
 .about-cap { font-size: .82rem; color: var(--ink-soft); font-style: italic; margin-top: .9rem; text-align: center; }
 
+/* Ana sayfa "Ben Memduha" — gün batımı fonu (hero paletine uygun, koyulaştırılmış) */
+.about-section--sunset {
+  background: linear-gradient(162deg, #1c3744 0%, #46394e 36%, #8a4a35 72%, #c0701f 100%);
+  color: #f4ead9;
+}
+.about-section--sunset .eyebrow { color: #f4cd8c; }
+.about-section--sunset h2 { color: #ffffff; }
+.about-section--sunset .lead { color: #f3e7d4; }
+.about-section--sunset .about-cap { color: #ecdcc3; }
+.about-section--sunset .bg-merhaba { color: #ffe6c2; opacity: .10; }
+
 /* ---------- Home: iki şehir ---------- */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
 .place { position: relative; display: block; overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; box-shadow: var(--shadow); }

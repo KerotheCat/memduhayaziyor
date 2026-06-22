@@ -1,0 +1,183 @@
+/* =========================================================
+   Memduha Uluevli — Franco Maria Ricci tarzı (yalnızca ana sayfa denemesi)
+   Bodoni · vellum · altın saç-çizgisi · gölgesiz · 0px radius
+   ========================================================= */
+
+:root {
+  --vellum: #f6f6f6;
+  --paper:  #ffffff;
+  --ink:    #000000;
+  --gallery-ink: #0a0a0a;
+  --silver: #b3b3b3;
+  --gold:   #bc9c5c;
+
+  --serif:  'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  --sans:   Arial, Helvetica, system-ui, sans-serif;
+
+  --maxw: 1280px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--vellum);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--ink); text-decoration: none; }
+
+.italic { font-style: italic; }
+
+.container {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ---------- Top Bar Navigation ---------- */
+.fmr-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 0;
+}
+.monogram {
+  width: 44px; height: 44px; border: 1px solid var(--ink); border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--serif); font-size: 22px; color: var(--ink);
+}
+.fmr-nav-right { display: flex; align-items: flex-end; gap: 36px; }
+.fmr-nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.fmr-nav-links a {
+  font-size: 14px; letter-spacing: .04em; padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+}
+.fmr-nav-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.wordmark { text-align: right; line-height: 1.1; }
+.wordmark .name { font-size: 14px; letter-spacing: .06em; }
+.wordmark .sub { font-family: var(--serif); font-style: italic; font-size: 12px; color: var(--ink); }
+.nav-toggle { display: none; background: none; border: 0; font-size: 20px; cursor: pointer; color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.fmr-hero {
+  display: grid; grid-template-columns: 40% 60%;
+  align-items: center; gap: 48px;
+  padding: 48px 0 80px;
+}
+.fmr-hero__text { max-width: 360px; }
+.fmr-hero h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 42px; line-height: 0.95; margin: 0 0 24px;
+}
+.fmr-hero .kicker {
+  font-style: italic; font-size: 22px; line-height: 1.25; margin: 0 0 16px; color: var(--ink);
+}
+.fmr-hero p.lead { font-size: 16px; line-height: 1.5; max-width: 320px; margin: 0 0 32px; }
+.fmr-hero__plate img { width: 100%; height: auto; }
+
+/* ---------- Bracket CTA / Ghost link ---------- */
+.bracket {
+  display: inline-block; font-family: var(--serif); font-size: 14px; letter-spacing: .08em;
+  color: var(--ink); padding-bottom: 4px; border-bottom: 1px solid var(--ink);
+}
+.bracket:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.ghost {
+  display: inline-block; font-size: 14px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--ink);
+}
+.ghost:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ---------- Section title + gold rule ---------- */
+.sec { padding: 48px 0; }
+.sectitle { text-align: center; margin: 0 0 40px; }
+.sectitle .t {
+  font-family: var(--serif); font-style: italic; font-size: 22px; letter-spacing: .04em;
+  display: block; margin-bottom: 16px;
+}
+.sectitle .rule { height: 0; border: 0; border-top: 1px solid var(--gold); width: 100%; margin: 0; }
+
+/* ---------- Editorial two-column (Ben Memduha) ---------- */
+.editorial {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.editorial .plate img { width: 100%; height: auto; }
+.editorial h2 { font-family: var(--serif); font-weight: 400; font-size: 42px; line-height: 0.95; margin: 0 0 24px; }
+.editorial p { font-size: 16px; line-height: 1.6; margin: 0 0 20px; max-width: 420px; }
+.editorial .cap { font-size: 12px; font-style: italic; color: var(--ink); margin-top: 16px; }
+
+/* ---------- Three-column book grid ---------- */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border: 1px solid var(--ink); }
+.grid3 .col { padding: 40px; text-align: center; border-left: 1px solid var(--ink); }
+.grid3 .col:first-child { border-left: 0; }
+.grid3 .col .cover { display: block; margin: 24px auto 24px; }
+.grid3 .col .cover img { margin: 0 auto; max-height: 320px; width: auto; }
+.grid3 .col .title { font-family: var(--serif); font-size: 16px; margin: 0 0 4px; }
+.grid3 .col .meta { font-family: var(--sans); font-size: 12px; color: var(--ink); }
+.grid3 .col .kind { font-style: italic; font-size: 12px; color: var(--ink); margin-bottom: 8px; }
+
+/* ---------- Dark band (Atölye / Magazine) ---------- */
+.band {
+  background: var(--gallery-ink); color: var(--paper);
+  display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
+}
+.band .band-img { overflow: hidden; }
+.band .band-img img { width: 100%; height: 100%; object-fit: cover; }
+.band .band-body { padding: 80px 48px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.band .band-body .mark { font-family: var(--serif); font-weight: 400; font-size: 42px; line-height: 0.95; color: #fff; margin: 0; }
+.band .band-body .label { font-family: var(--sans); font-size: 12px; letter-spacing: .28em; color: #fff; margin: 8px 0 28px; }
+.band .band-body p { font-size: 16px; line-height: 1.5; color: #e9e9e9; max-width: 380px; margin: 0 0 28px; }
+.band .bracket { color: #fff; border-bottom-color: #fff; }
+.band .bracket:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ---------- Full-bleed editorial image plate ---------- */
+.plate-block { text-align: center; }
+.plate-block .pimg { margin: 0 0 24px; }
+.plate-block .pimg img { width: 100%; height: 56vh; object-fit: cover; }
+.plate-block p { font-size: 16px; max-width: 520px; margin: 0 auto 24px; line-height: 1.6; }
+
+/* ---------- Pagination indicator ---------- */
+.pagination {
+  display: flex; justify-content: flex-end; align-items: center; gap: 12px;
+  padding: 20px 0; margin-top: 24px; border-top: 1px solid var(--ink);
+  font-family: var(--sans); font-size: 12px;
+}
+.pagination .arrow { font-size: 14px; }
+
+/* ---------- Footer ---------- */
+.fmr-footer { background: var(--gallery-ink); color: var(--paper); margin-top: 48px; }
+.fmr-footer .inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; padding: 64px 0 48px; }
+.fmr-footer .monogram { border-color: #fff; color: #fff; }
+.fmr-footer a { color: #fff; }
+.fmr-footer a:hover { color: var(--gold); }
+.fmr-footer .f-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
+.fmr-footer .f-fine { font-family: var(--sans); font-size: 12px; color: #b3b3b3; padding-bottom: 40px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .fmr-hero { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 48px; }
+  .fmr-hero__text { max-width: none; order: 2; }
+  .editorial { grid-template-columns: 1fr; gap: 32px; }
+  .band { grid-template-columns: 1fr; }
+  .band .band-img img { height: 260px; }
+  .band .band-body { padding: 48px 32px; }
+}
+@media (max-width: 640px) {
+  .container { padding-inline: 24px; }
+  .fmr-nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .fmr-nav-links.open { display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 84px; background: var(--vellum); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 16px 24px; gap: 14px; z-index: 20; }
+  .grid3 { grid-template-columns: 1fr; }
+  .grid3 .col { border-left: 0; border-top: 1px solid var(--ink); }
+  .grid3 .col:first-child { border-top: 0; }
+  .fmr-hero h1, .editorial h2 { font-size: 34px; }
+  .fmr-footer .inner { flex-direction: column; gap: 28px; }
+}

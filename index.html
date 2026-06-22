@@ -7,15 +7,15 @@
   <meta name="description" content="Memduha Uluevli — yazar. Çocuk kitapları, yazı atölyeleri ve İstanbul ile Bozcaada'dan ilham gezileri." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/duna.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap&subset=latin-ext" rel="stylesheet" />
+  <link rel="stylesheet" href="css/edisyon.css" />
 </head>
 <body>
 
   <!-- NAV -->
   <header class="container">
-    <nav class="duna-nav">
-      <a class="brand" href="index.html"><span class="star">✱</span> MEMDUHA ULUEVLİ</a>
+    <nav class="nav">
+      <a class="brand" href="index.html">Memduha Uluevli<small>Yazar</small></a>
       <button class="nav-toggle" aria-label="Menü">☰</button>
       <ul class="nav-links">
         <li><a href="hakkimda.html">Hakkımda</a></li>
@@ -23,69 +23,69 @@
         <li><a href="atolyeler.html">Atölyeler</a></li>
         <li><a href="yazilar.html">Yazılar</a></li>
         <li><a href="gezi.html">Gezi</a></li>
-        <li class="only-mobile"><a href="iletisim.html">İletişim</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
       </ul>
-      <a class="btn btn-fill nav-cta" href="iletisim.html">İletişim</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="duna-hero">
-    <img class="duna-hero__art" src="img/hero/hero.jpg" alt="Bozcaada'da gün batımı" />
-    <div class="duna-hero__stack">
-      <span class="pill">Yeni · Kaya ile Karga</span>
+  <section class="hero">
+    <img class="hero__art" src="img/hero/hero.jpg" alt="Bozcaada'da gün batımı" />
+    <div class="hero__stack">
+      <span class="tag">Yazar · Çocuk Kitapları</span>
       <h1>Kelimelerle yavaşlayan bir yolculuk</h1>
       <p class="sub">İstanbul'un eski mahallelerinden Bozcaada'nın rüzgârına… Yazıyı, kendimle ve okurla buluştuğum yer olarak görüyorum.</p>
-      <a class="btn btn-fill btn-lg" href="atolyeler.html">Atölyeleri keşfet</a>
+      <div class="btn-row">
+        <a class="btn btn-fill" href="atolyeler.html">Atölyeleri keşfet</a>
+        <a class="btn btn-ghost" href="hakkimda.html">Hakkımda</a>
+      </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="container sec" style="padding-top:40px;">
-    <div class="stats">
-      <div><div class="num">2</div><div class="lbl">Yazı atölyesi</div></div>
-      <div><div class="num">1</div><div class="lbl">Çocuk kitabı</div></div>
-      <div><div class="num">10</div><div class="lbl">Okuma önerisi</div></div>
-    </div>
+  <!-- POETİK ARA -->
+  <section class="container sec" style="padding:64px 0;">
+    <p class="center-quote">"Yazı, kendinle buluştuğun yerdir."</p>
   </section>
 
-  <!-- FEATURE CARDS -->
+  <!-- SEÇKİ — KİTAP RAFI -->
   <section class="container sec" style="padding-top:0;">
     <div class="sec-head">
-      <p class="eyebrow">Neler var?</p>
-      <h2>Buradan başla</h2>
+      <span class="tag">Seçki</span>
+      <h2>İlham aldığım kitaplar</h2>
+      <p>Beni besleyen, yazarken yanımda duran kitaplar.</p>
     </div>
-    <div class="cards">
-      <a class="card" href="kitaplarim.html">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#292421" stroke-width="1.5"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5Z"/><path d="M18 3v18"/></svg>
-        <h3>Kitaplar</h3>
-        <p>Çocuk kitabım ve beni besleyen, ilham aldığım okuma önerileri.</p>
-        <span class="more">Keşfet →</span>
-      </a>
-      <a class="card" href="atolyeler.html">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#292421" stroke-width="1.5"><path d="M3 21l3-1 11-11-2-2L4 18l-1 3Z"/><path d="M14 6l2 2"/></svg>
-        <h3>Atölyeler</h3>
-        <p>Yetişkinler için Yaratıcı Yazı Atölyesi, çocuklar için Kelime Bahçesi.</p>
-        <span class="more">Keşfet →</span>
-      </a>
-      <a class="card" href="yazilar.html">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#292421" stroke-width="1.5"><path d="M4 19c6-2 9-6 14-15M4 19c0-4 2-7 6-8"/></svg>
-        <h3>Yazılar</h3>
-        <p>Yayımlanan ilk öyküm, blog ve Substack yazılarım.</p>
-        <span class="more">Keşfet →</span>
-      </a>
+    <div class="shelf">
+      <div class="bk"><img src="img/books/maalouf-semerkant.jpg" alt="Semerkant" /><div class="t">Semerkant</div><div class="a">Amin Maalouf</div></div>
+      <div class="bk"><img src="img/books/hosseini-bin-muhtesem-gunes.jpg" alt="Bin Muhteşem Güneş" /><div class="t">Bin Muhteşem Güneş</div><div class="a">Khaled Hosseini</div></div>
+      <div class="bk"><img src="img/books/livaneli-son-ada.jpg" alt="Son Ada" /><div class="t">Son Ada</div><div class="a">Zülfü Livaneli</div></div>
+      <div class="bk"><img src="img/books/ferrante-olaganustu-akilli-arkadasim.jpg" alt="Benim Olağanüstü Akıllı Arkadaşım" /><div class="t">Olağanüstü Akıllı Arkadaşım</div><div class="a">Elena Ferrante</div></div>
+      <div class="bk"><img src="img/books/pinar-kur-asilacak-kadin.jpg" alt="Asılacak Kadın" /><div class="t">Asılacak Kadın</div><div class="a">Pınar Kür</div></div>
+    </div>
+    <div class="shelf-foot"><a class="btn btn-ghost" href="kitaplarim.html">Tüm kitaplık</a></div>
+  </section>
+
+  <!-- KAYA İLE KARGA -->
+  <section class="container sec" style="padding-top:0;">
+    <div class="bookcard">
+      <img src="img/books/kaya-ile-karga-kapak.jpg" alt="Kaya ile Karga kitabının kapağı" />
+      <div>
+        <span class="tag">Kendi kitabım · Resimli masal</span>
+        <h2>Kaya ile Karga</h2>
+        <p>Yuvasından düşen bir karga ile küçük Kaya'nın dostluğu… Farklılıklara saygıyı ve şefkatle dinlemeyi anlatan resimli bir uyku masalı — doğrudan tarayıcıdan, sayfaları çevirerek okunabilir.</p>
+        <a class="btn btn-fill" href="kitaplar/kaya-ile-karga/" target="_blank" rel="noopener">Kitabı oku</a>
+      </div>
     </div>
   </section>
 
-  <!-- BOOK FEATURE -->
+  <!-- ATÖLYELER -->
   <section class="container sec" style="padding-top:0;">
-    <div class="bookfeat">
-      <div class="bf-img"><img src="img/books/kaya-ile-karga-kapak.jpg" alt="Kaya ile Karga kitabının kapağı" /></div>
+    <div class="editorial">
+      <img src="img/atolye/kelime-bahcesi.jpg" alt="Defter ve kalemle yazı atölyesi" />
       <div>
-        <p class="eyebrow">Kendi kitabım · Resimli uyku masalı</p>
-        <h2>Kaya ile Karga</h2>
-        <p>Yuvasından düşen bir karga ile küçük Kaya'nın dostluğu… Farklılıklara saygıyı ve şefkatle dinlemeyi anlatan resimli bir masal — doğrudan tarayıcıdan, sayfaları çevirerek okunabilir.</p>
-        <a class="btn btn-fill" href="kitaplar/kaya-ile-karga/" target="_blank" rel="noopener">Kitabı oku</a>
+        <span class="tag">Atölyeler</span>
+        <h2>Yazıyı birlikte keşfedelim</h2>
+        <p>Yetişkinler için keşif odaklı <em>Yaratıcı Yazı Atölyesi</em>, çocuklar için hayal gücünü kelimelere çeviren <em>Kelime Bahçesi</em>. Yavaş, derin, samimi.</p>
+        <a class="btn btn-ghost" href="atolyeler.html">Atölyelere göz at</a>
       </div>
     </div>
   </section>
@@ -94,14 +94,14 @@
   <section class="container sec" style="padding-top:0;">
     <div class="editorial">
       <div>
-        <img src="img/about/memduha.jpg" alt="Memduha Uluevli İstanbul'un eski bir sokağında" />
-        <p class="cap">İstanbul'un eski sokaklarında, bir kedi dostuyla.</p>
-      </div>
-      <div>
-        <p class="eyebrow" style="font-size:14px;color:var(--stone);margin:0 0 14px;">Ben Memduha</p>
+        <span class="tag">Ben Memduha</span>
         <h2>Zaman zaman öğretmen, her zaman öğrenci</h2>
         <p>Çocuk kitapları yazıyor, çocuklarla ve yetişkinlerle yazı atölyeleri düzenliyorum. İstanbul ve Bozcaada benim ilham kaynağım; bir dönemin İstanbul'unu ve o dönemin kadınlarını anlattığım bir roman üzerinde çalışıyorum.</p>
         <a class="btn btn-ghost" href="hakkimda.html">Hakkımda</a>
+      </div>
+      <div class="rev">
+        <img src="img/about/memduha.jpg" alt="Memduha Uluevli İstanbul'un eski bir sokağında" />
+        <p class="cap">İstanbul'un eski sokaklarında, bir kedi dostuyla.</p>
       </div>
     </div>
   </section>
@@ -109,23 +109,21 @@
   <!-- GEZİ -->
   <section class="container sec" style="padding-top:0;">
     <div class="editorial">
+      <img src="img/gallery/bozcaada/boz05.jpg" alt="Bozcaada'da gün batımı" />
       <div>
-        <p class="eyebrow" style="font-size:14px;color:var(--stone);margin:0 0 14px;">Gezi &amp; İlham</p>
+        <span class="tag">Gezi &amp; İlham</span>
         <h2>İki şehir, bir ilham</h2>
         <p>Üzerinde çalıştığım roman için İstanbul'un eski semtlerini adımlıyor; Bozcaada'da denizin ve rüzgârın sessizliğinde yazıyorum. O yolculuklardan kareler.</p>
         <a class="btn btn-ghost" href="gezi.html">Galeriye git</a>
-      </div>
-      <div>
-        <img src="img/gallery/istanbul/ist45.jpg" alt="İstanbul'da bir kilise içi" />
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="duna-footer">
+  <footer class="footer">
     <div class="container">
       <div class="inner">
-        <a class="brand" href="index.html"><span class="star">✱</span> MEMDUHA ULUEVLİ</a>
+        <a class="brand" href="index.html">Memduha Uluevli<small>Yazar</small></a>
         <ul class="f-links">
           <li><a href="hakkimda.html">Hakkımda</a></li>
           <li><a href="kitaplarim.html">Kitaplar</a></li>

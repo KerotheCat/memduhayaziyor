@@ -91,8 +91,10 @@ p { margin: 0 0 1.1em; }
   font-weight: 600;
   color: var(--sea);
   letter-spacing: .01em;
+  display: inline-flex; align-items: center; gap: 9px;
 }
 .brand:hover { color: var(--sunset); }
+.brand-logo { height: 1.2em; width: auto; flex: 0 0 auto; }
 .brand small {
   display: block;
   font-family: var(--serif);

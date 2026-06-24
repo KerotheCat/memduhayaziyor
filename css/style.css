@@ -319,9 +319,7 @@ code {
 .portrait-frame {
   background: #fff; padding: 12px 12px 14px; border: 1px solid var(--line);
   box-shadow: 0 14px 34px rgba(43,38,32,.16); border-radius: 2px;
-  transform: rotate(-1.6deg); transition: transform .3s ease;
 }
-.portrait-frame:hover { transform: rotate(0deg); }
 .portrait-frame img { display: block; width: 100%; border-radius: 1px; background: var(--cream-2); }
 .about-cap { font-size: .82rem; color: var(--ink-soft); font-style: italic; margin-top: .9rem; text-align: center; }
 

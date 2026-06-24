@@ -113,18 +113,11 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); m
 
 /* ---------- Film şeridi (geziler) ---------- */
 .filmstrip { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.filmstrip > a { flex: 0 0 auto; display: block; line-height: 0; scroll-snap-align: start; }
 .filmstrip img { height: 240px; width: auto; flex: 0 0 auto; border-radius: 14px; scroll-snap-align: start; background: var(--line); }
+.filmstrip > a img { display: block; }
 .filmstrip::-webkit-scrollbar { height: 8px; }
 .filmstrip::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
-
-/* ---------- Yazılarım film şeridi ---------- */
-.writestrip { display: flex; gap: 18px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-.writestrip .wcard { flex: 0 0 auto; width: 210px; scroll-snap-align: start; }
-.writestrip .wcard img { width: 210px; height: 138px; object-fit: cover; border-radius: 14px; background: var(--line); }
-.writestrip .wt { display: block; font-family: var(--display); font-size: 1.02rem; line-height: 1.25; margin-top: 12px; color: var(--ink); }
-.writestrip .wcard:hover .wt { color: var(--accent); }
-.writestrip::-webkit-scrollbar { height: 8px; }
-.writestrip::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
 
 /* ---------- Bu sıralar ne okuyorum (gerçek kapaklar, küçük) ---------- */
 .reading { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 480px; margin: 0 auto; }

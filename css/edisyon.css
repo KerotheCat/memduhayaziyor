@@ -107,6 +107,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); m
 .memduha-band .inner { position: relative; z-index: 2; max-width: 720px; padding: clamp(56px, 9vw, 110px) clamp(28px, 6vw, 72px); }
 .memduha-band .tag { color: #ecc9a0; margin-bottom: 16px; }
 .memduha-band h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 20px; }
+.memduha-band .verse { font-size: clamp(1.5rem, 3.6vw, 2.5rem); line-height: 1.28; letter-spacing: .03em; margin: 0 0 10px; }
+.memduha-band .attrib { font-family: var(--serif); font-style: italic; color: #e7cba4; font-size: .98rem; margin: 0 0 26px; }
 .memduha-band p { color: #f2ece2; font-size: 1.12rem; line-height: 1.7; margin: 0 0 14px; max-width: 600px; }
 
 /* ---------- Film şeridi (geziler) ---------- */

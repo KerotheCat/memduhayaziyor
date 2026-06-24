@@ -4,7 +4,7 @@ Statik (derleme gerektirmeyen) bir site. Tüm dosyalar düz HTML/CSS/JS; bu `sit
 
 ## Yayında
 
-- **Canlı adres:** https://kerothecat.github.io/memduhayaziyor/
+- **Canlı adres:** https://memduhayaziyor.com
 - **Depo:** https://github.com/KerotheCat/memduhayaziyor (GitHub Pages, `main` dalı, kök)
 
 ### Güncelleme (yayındaki site nasıl değişir?)

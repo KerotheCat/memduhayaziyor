@@ -4,15 +4,16 @@
    ========================================================= */
 
 :root {
-  --cream:      #f7f3ea;
-  --cream-2:    #efe8d9;
+  /* Sıcak Edebî paleti (edisyon ile uyumlu) — sıcak kâğıt + tek terracotta vurgu */
+  --cream:      #f6f3ec;
+  --cream-2:    #efe9dd;
   --ink:        #2b2620;
-  --ink-soft:   #574f44;
-  --sea:        #1f3d4c;
-  --sea-2:      #2f5566;
-  --sunset:     #c9722e;
-  --sunset-2:   #e08a3c;
-  --line:       #e0d7c6;
+  --ink-soft:   #6b6258;
+  --sea:        #2b2620;   /* mavi yerine sıcak koyu mürekkep */
+  --sea-2:      #463d35;
+  --sunset:     #b06a36;   /* tek sıcak vurgu (terracotta) */
+  --sunset-2:   #c47f44;
+  --line:       #e3dccd;
   --white:      #fffdf8;
 
   --serif:  'Spectral', Georgia, 'Times New Roman', serif;
@@ -45,7 +46,7 @@ a:hover { color: var(--sunset); }
 
 h1, h2, h3, h4 {
   font-family: var(--display);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.15;
   color: var(--ink);
   margin: 0 0 .5em;
@@ -77,7 +78,7 @@ p { margin: 0 0 1.1em; }
 /* ---------- Header / Nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(247, 243, 234, .92);
+  background: rgba(246, 243, 236, .92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }

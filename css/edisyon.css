@@ -51,7 +51,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); m
 
 /* ---------- Navigation ---------- */
 .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-.brand { font-family: var(--display); font-size: 1.35rem; color: var(--ink); }
+.brand { font-family: var(--display); font-size: 1.35rem; color: var(--ink); display: inline-flex; align-items: center; gap: 9px; }
 .brand-logo { height: 1.2em; width: auto; flex: 0 0 auto; }
 .brand small { display: block; font-family: var(--serif); font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); margin-top: 1px; }
 .nav-links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; align-items: center; }

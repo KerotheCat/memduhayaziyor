@@ -256,6 +256,23 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 }
 .gallery img:hover { filter: brightness(1.05); }
 
+/* Gezi film şeridi (tek sıra) + Devamı */
+.gezi-strip { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; -webkit-overflow-scrolling: touch; }
+.gezi-strip img {
+  height: 210px; width: auto; flex: 0 0 auto; border-radius: 6px; cursor: zoom-in;
+  background: var(--cream-2); transition: filter .2s ease; display: block;
+}
+.gezi-strip img:hover { filter: brightness(1.06); }
+.gezi-strip::-webkit-scrollbar { height: 8px; }
+.gezi-strip::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+.gezi-more {
+  display: inline-block; margin: .8rem 0 0; font-family: var(--serif); font-size: .95rem;
+  color: var(--sunset); border-bottom: 1px solid var(--sunset); padding-bottom: 2px; cursor: pointer;
+}
+.gezi-more:hover { color: var(--sea); border-color: var(--sea); }
+.gezi-folder { margin-top: 3rem; }
+.gezi-folder h2 { margin-bottom: 1.1rem; }
+
 /* Lightbox */
 .lightbox {
   position: fixed; inset: 0; z-index: 100; display: none;
